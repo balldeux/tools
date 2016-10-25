@@ -21,12 +21,8 @@ do
   pids="$pids $pid"
 done
 
-#jobs -l
-#wait $pids 
-
 while [ `jobs -l|grep Running|wc -l` -gt 0 ]
 do 
-#tput rc
   echo -ne ""
   for pidrun in $pids
   do
@@ -55,31 +51,3 @@ do
   done
 done
 echo ""
-
-#for exectime in ${!pidfile[*]}
-#do 
-# echo "pid: $exectime|$(cat ${pidfile[$exectime]}) "
-#done
-
-
-#for pid in $pids
-#do
-#  echo "wait"
-#  wait $pid
-#  echo "$pid : terminé" 
-#  result=$?
-#  results="$results $result"
-#done
-#
-#echo $results
-#
-#i=0
-#my_array=( $my_list )
-#for ret_val in $results
-#do
-#  echo ${my_array[$i]} returned $ret_val
-#  ((i++))
-#done
-#
-
-
